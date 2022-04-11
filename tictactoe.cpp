@@ -4,8 +4,8 @@
 char boarddisplay(char board[][3])
 {
     int i,j,k;
-    printf("0  1  2\n");
-    for(i=0,k=0;i<3;i++,k++)
+    printf("1  2  3\n");
+    for(i=0,k=1;i<3;i++,k++)
     {
         for(j=0;j<3;j++)
         {
@@ -23,7 +23,7 @@ int turn1(char board[][3])
         scanf("%d",&y_coordinate);
         printf("player 1,enter the y-coordinate\n");
         scanf("%d",&x_coordinate);
-        if ((x_coordinate>2)||(y_coordinate>2)||(board[x_coordinate][y_coordinate]!='.'))
+        if ((x_coordinate-1>2)||(y_coordinate-1>2)||(board[x_coordinate-1][y_coordinate-1]!='.'))
             {
                 printf("enter a valid input\n");
             }
@@ -40,7 +40,7 @@ int turn1(char board[][3])
             char position=board[i][j];
             char space='.';
             {
-                if ((position==space)&&(i==x_coordinate)&&(j==y_coordinate))
+                if ((position==space)&&(i==x_coordinate-1)&&(j==y_coordinate-1))
                 {
                     board[i][j]='X';
                 }
@@ -57,7 +57,7 @@ int turn2(char board[][3])
         scanf("%d",&y_coordinate);
         printf("player 2,enter the y-coordinate\n");
         scanf("%d",&x_coordinate);
-        if ((x_coordinate>2)||(y_coordinate>2)||(board[x_coordinate][y_coordinate]!='.'))
+        if ((x_coordinate-1>2)||(y_coordinate-1>2)||(board[x_coordinate-1][y_coordinate-1]!='.'))
             {
                 printf("enter a valid input\n");
             }
@@ -74,7 +74,7 @@ int turn2(char board[][3])
             char position=board[i][j];
             char space='.';
             {
-                if ((position==space)&&(i==x_coordinate)&&(j==y_coordinate))
+                if ((position==space)&&(i==x_coordinate-1)&&(j==y_coordinate-1))
                 {
                     board[i][j]='O';
                 }
